@@ -1,5 +1,59 @@
 @import (reference) './variables.less';
 
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+	font-family: 'Proxima Nova Thin';
+	src: url('./../assets/fonts/proxima_nova_thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 300;
+	font-family: 'Proxima Nova Light';
+	src: url('./../assets/fonts/proxima_nova_light.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Avenir';
+	src: url('./../assets/fonts/ofont.ru_Avenir Next.ttf') format('truetype');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: bold;
+	font-family: 'Proxima Nova';
+	src: url('./../assets/fonts/proxima_nova_bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 800;
+	font-family: 'Proxima Nova';
+	src: url('./../assets/fonts/proxima_nova_extrabold.woff2') format('woff2');
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 300;
+	font-family: 'Proxima Nova';
+	src: url('./../assets/fonts/proxima_nova_light_italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+	font-family: 'Proxima Nova';
+	src: url('./../assets/fonts/proxima_nova_regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+	font-family: 'Proxima Nova';
+	src: url('./../assets/fonts/proxima_nova_semibold.woff2') format('woff2');
+}
+
 html {
   color: @color-text;
 
@@ -25,4 +79,190 @@ a {
   text-decoration: none;
 
   color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: #ffffff;
+  background: var(--grayFonColor);
+}
+
+.content-box-component {
+  box-sizing: content-box;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+// Переменные css
+
+:root {
+  --akcentColor: #EB3F57;
+  --grayFonColor: #3C374B;
+  --blackFonColor: #2F2C3D;
+  --blackFonHoverColor: #A7A5AE;
+}
+
+// миксины )) уже сверстал на своем сборщике
+// решил оставить добавивь миксины классами к html
+
+.custom-input,
+.custom-textarea {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+  border: 1px solid #858585;
+  border-radius: 20px;
+
+  outline: none;
+
+  &:hover, &:focus {
+    border: 1px solid #FFB71B;
+  }
+  &:invalid {
+    border: 1px solid #EB4C47;
+  }
+}
+
+.button {
+  width: 180px;
+  height: 40px;
+  padding: 10px 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Montserrat';
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: bold;
+  color: var(--blackFonColor);
+  text-transform: uppercase;
+
+  background: var(--akcentColor);
+  border: none;
+  border-radius: 20px;
+
+  cursor: pointer;
+  outline: none;
+  transition: all 0.5s;
+
+  &:hover {
+    background: var(--akcentColorHover);
+  }
+  &:active {
+    transform: translateY(1px);
+    background: var(--akcentColor);
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.snap {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &__svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+// content
+.page-main {
+  overflow: hidden; 
+}
+
+.content {
+  min-width: 320px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1450px) {
+  .content {
+    max-width: 1450px;
+  }
 }
