@@ -173,37 +173,76 @@ input[type='radio'].visually-hidden {
   }
 }
 
-.button {
-  width: 180px;
-  height: 40px;
-  padding: 10px 20px;
+.akcent-button {
+  position: relative;
+
+  padding: 23px 30px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-family: 'Montserrat';
-  font-size: 12px;
-  line-height: 24px;
+  font-family: 'Proxyma Nova';
+  font-size: 14px;
+  line-height: 28px;
   font-weight: bold;
-  color: var(--blackFonColor);
+  letter-spacing: 0.08em;
+  color:#ffffff;
   text-transform: uppercase;
 
-  background: var(--akcentColor);
+  background: #DA3950;
+  box-shadow: 0px 4px 80px #EB3F57;
+  border-radius: 8px;
   border: none;
-  border-radius: 20px;
 
   cursor: pointer;
   outline: none;
-  transition: all 0.5s;
+  transition-duration: 0.5s;
+  transition-property: all;
+
+  & .akcent-button__front {
+    position: relative;
+    width: 100%;
+    top: -4px;
+    transition: all 0.1s;
+  }
+
+  &::before {
+    content: '';
+    
+    position: absolute;
+    top: -4px;
+    left: 0px;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--akcentColor);
+    box-shadow: inset 0px 4px 20px rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    transition: all 0.1s;
+  }
 
   &:hover {
-    background: var(--akcentColorHover);
+    box-shadow: none;
   }
+
+  &:hover::before {
+    box-shadow: none;
+  }
+
   &:active {
-    transform: translateY(1px);
-    background: var(--akcentColor);
+    box-shadow: none;
   }
+
+  &:active::before {
+    top: 0px;
+  }
+
+  &:active .akcent-button__front {
+    top: 0px;
+  }
+
   &:disabled {
     opacity: 0.5;
   }
@@ -212,7 +251,7 @@ input[type='radio'].visually-hidden {
 .snap {
   width: 38px;
   height: 38px;
-  padding: 0;
+  padding: 5px;
 
   display: flex;
   justify-content: center;
@@ -238,7 +277,7 @@ input[type='radio'].visually-hidden {
   text-decoration: underline;
 
   &:hover {
-    text-decoration: none;
+    color: var(--akcentColor);
   }
 }
 
@@ -250,19 +289,17 @@ input[type='radio'].visually-hidden {
 }
 
 // content
-.page-main {
-  overflow: hidden; 
-}
 
 .content {
-  min-width: 320px;
+  min-width: 360px;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
 }
 
-@media (min-width: 1450px) {
+@media (min-width: 1190px) {
   .content {
-    max-width: 1450px;
+    max-width: 1190px;
+    padding: 0 10px;
   }
 }

@@ -1,0 +1,206 @@
+.slogan__credo {
+  margin-bottom: 17px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 32px;
+
+  letter-spacing: 0.08em;
+}
+
+.slogan__heart {
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: auto; // !!!?????
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+
+  font-family: 'Proxima Nova Light';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 16px;
+
+  border: 1px solid #545061;
+  border-radius: 5px;
+}
+
+.slogan__heart-svg {
+  margin-right: 5px;
+}
+
+.slogan__infinity-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+}
+
+.slogan__info {
+  margin-bottom: 36px;
+
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.slogan__score {
+  position: relative;
+
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 37px;
+  padding-bottom: 23px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score__button-wrapper {
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score__link {
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  line-height: 30px;
+
+  &:hover {
+    --fill-color: var(--akcentColor);
+  }
+}
+
+.score__svg {
+  margin-left: 5px;
+}
+
+.score__info {
+  position: relative;
+
+  width: 280px;
+  padding: 20px;
+
+  font-size: 14px;
+  line-height: 20px;
+
+  opacity: 0.8;
+
+  &::before {
+    content: '';
+    position: absolute;
+
+    top: -65px;
+    bottom: 0px;
+    left: 0px;
+
+    width: 100%;
+    border: 5px solid transparent;
+    border-image: linear-gradient(0deg, gray, blue);
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 1190px) {
+  .header__slogan {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .slogan__credo {
+    width: 48%;
+    margin-bottom: 40px;
+  
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    font-size: 35px;
+    line-height: 55px;
+    
+  }
+  
+  .slogan__heart {
+    padding: 16px 21px;
+    margin-left: 21px;
+  
+    font-size: 25px;
+    line-height: 25px;
+  }
+  
+  .slogan__heart-svg {
+    margin-right: 12px;
+  }
+  
+  .slogan__infinity-sign {
+    & svg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  
+  .slogan__info {
+    width: 42%;
+    margin-bottom: 70px;
+  
+    font-size: 18px;
+    line-height: 27px;
+  }
+  
+  .slogan__score {
+    width: 62.5%;
+    margin: 0;
+    margin-bottom: 37px;
+    padding-bottom: 23px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+  
+  .score__link {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  
+    display: flex;
+    align-items: center;
+  
+    font-size: 12px;
+    line-height: 30px;
+  
+    &:hover {
+      --fill-color: var(--akcentColor);
+    }
+  }
+  
+  .score__svg {
+    margin-left: 5px;
+  }
+  
+  .score__info {
+    width: 240px;
+  
+    font-size: 14px;
+    line-height: 20px;
+  
+    opacity: 0.8;
+  }
+}
